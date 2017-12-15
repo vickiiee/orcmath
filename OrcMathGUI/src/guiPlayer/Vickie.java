@@ -5,9 +5,9 @@ import java.awt.Graphics2D;
 
 import guiTeacher.components.Component;
 
-public class VICKIEVICKIE extends Component {
+public class Vickie extends Component {
 
-	public VICKIEVICKIE() {
+	public Vickie() {
 		
 		super(40, 40, 100, 100);
 		update();

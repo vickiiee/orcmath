@@ -1,164 +1,132 @@
 package guiPlayer;
 
-	import java.io.BufferedReader;
+import java.io.BufferedReader;
 
-	import java.io.File;
+import java.io.File;
 
-	import java.io.FileReader;
+import java.io.FileReader;
 
-	import java.io.FileWriter;
+import java.io.FileWriter;
 
-	import java.io.IOException;
+import java.io.IOException;
 
-	import java.util.ArrayList;
+import java.util.ArrayList;
 
-	import java.util.List;
+import java.util.List;
 
-	import java.util.Scanner;
+import java.util.Scanner;
 
+public class FileLoadingConsole {
 
+	public static void main(String[] args){
 
-	public class FileLoadingConsole {
+		List<String> content = testFileLoading();
 
+		displayContent(content);
 
+		testSaveContent("test.csv");
 
-	 public static void main(String[] args){
+	}
 
-	 List<String> content = testFileLoading();
+	private static void testSaveContent(String fileName) {
 
-	 displayContent(content);
+		try{    
 
-	 testSaveContent("test.csv");
+			FileWriter fw=new FileWriter(fileName);    
 
+			fw.write("This file was created programmatically.");    
 
+			fw.close();    
 
+			System.out.println("Success! File \""+fileName+"\" saved!");
 
+		}catch(IOException e){
 
-	 
+			System.out.println("An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
 
-	 }
+		}
+	}
 
 
 
-	 private static void testSaveContent(String fileName) {
+	private static void displayContent(List<String> content) {
 
-	 try{    
+		//print the content:
 
-	 FileWriter fw=new FileWriter(fileName);    
+		for(String item : content){
 
-	 fw.write("This file was created programmatically.");    
+			System.out.println(item);
 
-	 fw.close();    
+		}
 
-	 System.out.println("Success! File \""+fileName+"\" saved!");
+	}
 
-	 }catch(IOException e){
+	private static List<String> testFileLoading() {
 
-	 System.out.println("An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
+		Scanner in = new Scanner(System.in);
 
-	 }
+		String fileName = "";
 
-	     
+		List<String> content = new ArrayList<String>();
 
-	 }
+		//use this boolean to control the while loop. The user should have multiple chances to enter a correct filename
 
+		boolean opened = false;
 
+		while(!opened){
 
-	 private static void displayContent(List<String> content) {
+			try {
 
-	 //print the content:
+				System.out.println("Enter a file to open");
 
-	 for(String item : content){
+				fileName = in.nextLine();
 
-	 System.out.println(item);
+				FileReader fileReader = new FileReader(new File(fileName));
 
-	 }
+				String line = "";
 
-	 }
+				//a BufferedReader enables us to read teh file one line at a time
 
+				BufferedReader br = new BufferedReader(fileReader);
 
+				while ((line = br.readLine()) != null) {
+					content.add(line);
+					/*
 
-	 private static List<String> testFileLoading() {
+					 * useful later:
 
-	 Scanner in = new Scanner(System.in);
-
-	 String fileName = "";
-
-	 List<String> content = new ArrayList<String>();
-
-	 //use this boolean to control the while loop. The user should have multiple chances to enter a correct filename
-
-	 boolean opened = false;
-
-	 while(!opened){
-
-	 try {
-
-	 System.out.println("Enter a file to open");
-
-	 fileName = in.nextLine();
-
-	 FileReader fileReader = new FileReader(new File(fileName));
-
-	 String line = "";
-
-	 //a BufferedReader enables us to read teh file one line at a time
-
-	 BufferedReader br = new BufferedReader(fileReader);
-
-	 while ((line = br.readLine()) != null) {
-
-
-
-	 content.add(line);
-
-
-
-	 /*
-
-	  * useful later:
-
-	  * split only a comma that has an even number of quotes ahead of it
+					 * split only a comma that has an even number of quotes ahead of it
 
 	 String[] row = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 
-	  */
+					 */
+				}
 
+				br.close();
 
+				opened = true;
 
+			}catch (IOException e) {
 
+				System.out.println("The file name you specified does not exist.");
 
-	 }
+			}
 
-	 br.close();
+		}
 
-	 opened = true;
+		//close the Scanner
 
-	 }catch (IOException e) {
+		in.close();
 
-	 System.out.println("The file name you specified does not exist.");
-
-	 }
-
-	 }
-
-	 
-
-
-
-	 //close the Scanner
-
-	 in.close();
-
-	 return content;
-
-	 }
-
-
-
-
+		return content;
 
 	}
+
+
+
+
+
+}
 
 
 

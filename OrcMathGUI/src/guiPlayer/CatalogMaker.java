@@ -31,7 +31,7 @@ public class CatalogMaker {
 		
 		input = new Scanner(System.in);
 		System.out.println("Type in title, author, genre, and the book number of the book in the series. Separate each with a comma.");
-		userInput = book.input; //get user input
+		//userInput = book.input; //get user input
 		
 		//search for three commmas
 			//return the index

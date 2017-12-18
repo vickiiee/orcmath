@@ -15,7 +15,7 @@ public class BookCatalog extends Component {
 	private int bookNum;
 	
 	
-	public BookCatalog(String title, String author, String genre, int bookNum) {
+	public BookCatalog(String title, String author, String genre, int bookNum) {///
 		super(40, 40, 400, 633);
 		
 		this.title = title;

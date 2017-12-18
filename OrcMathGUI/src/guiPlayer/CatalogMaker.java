@@ -102,7 +102,7 @@ public class CatalogMaker {
 
 				String line = "";
 
-				//a BufferedReader enables us to read teh file one line at a time
+				//a BufferedReader enables us to read teh file one line at a time//
 
 				BufferedReader br = new BufferedReader(fileReader);
 

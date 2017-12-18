@@ -100,6 +100,8 @@ public class FileLoadingConsole {
 	 String[] row = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 
 					 */
+					
+					//String info = ""
 				}
 
 				br.close();

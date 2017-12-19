@@ -1,6 +1,6 @@
 package guiPlayer;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -90,7 +90,7 @@ public class CatalogMaker {
 		String text = in.nextLine();
 		while(text.isEmpty()){
 			displayMessage("You must enter a non-empty String.");
-			text = in.nextLine();
+			text = in.nextLine(); // in (scanner) is static
 		}
 		return text;
 	}
@@ -102,8 +102,8 @@ public class CatalogMaker {
 
 	private void save() {
 		try{    
-			FileWriter fw=new FileWriter("BookCatalog.csv");
-			for(Book b: catalog){
+			FileWriter fw=new FileWriter("BookCatalog.csv"); 
+			for(Book b: catalog){	//depends on instances
 				fw.write(b+"\n");    	
 			}
 

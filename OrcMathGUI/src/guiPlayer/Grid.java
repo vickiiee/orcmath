@@ -15,7 +15,7 @@ public class Grid {
 
 		System.out.println("type something");
 
-		input = in.nextLine();
+		input = in.nextLine(); //get user input
 
 		stuff("sjdka.txt", input);
 

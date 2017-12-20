@@ -38,7 +38,7 @@ public class CatalogMakerBook {
 		CatalogMakerBook book = new CatalogMakerBook();
 
 		input = new Scanner(System.in);
-		System.out.println("Type in title, author, genre, and the book number of the book in the series. Separate each with a comma.");
+		//System.out.println("Type in title, author, genre, and the book number of the book in the series. Separate each with a comma.");
 		//userInput = book.input; //get user input
 		
 		//search for three commmas
@@ -46,13 +46,21 @@ public class CatalogMakerBook {
 		
 		System.out.print(book.getCsvContent());
 		
-		testSaveContent("test.csv");
 		
+		
+		/*Scanner in = new Scanner(System.in);
+
+		System.out.println("type something");
+
+		input = in.nextLine(); //get user input
+*/
+		//stuff("sjdka.txt", input);
+		book.testSaveContent("test.csv");
 	}
 	
-	private static void testSaveContent(String fileName) {
+	public void testSaveContent(String fileName) {
 
-		try{    
+		/*try{    
 
 			FileWriter fw=new FileWriter(fileName);    
 
@@ -75,6 +83,18 @@ public class CatalogMakerBook {
 
 			System.out.println("An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
 
+		}*/
+		
+		try{    
+			FileWriter fw=new FileWriter("BookCatalog.csv"); 
+			for(BookCatalog b: list){	//depends on instances
+				fw.write(b+"\n");    	
+			}
+
+			fw.close();    
+			System.out.println("Success! File \"BookCatalog.csv\" saved!");
+		}catch(IOException e){
+			System.out.println("An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
 		}
 	}
 	
@@ -141,6 +161,10 @@ public class CatalogMakerBook {
 	public void addNewItem(String title, String author, String genre, int bookNum) {
 		list.add(new BookCatalog(title, author, genre, bookNum));
 		System.out.println("Book added successfully!");
+	}
+	
+	public ArrayList<BookCatalog> getCatalog() {
+		return list;
 	}
 
 }

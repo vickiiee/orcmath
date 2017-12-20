@@ -32,12 +32,13 @@ public class CatalogScreen extends FullFunctionScreen {
 		
 		catalog = new CatalogMakerBook();
 		
-		textarea = new TextArea(40, 400,100,100, "TEXTAREARAERAEFG");
+		textarea = new TextArea(400, 200, 300, 100, "TEXTAREARAERAEFG");
 		viewObjects.add(textarea);
 		
 		
 		Title = new TextField(40,40,200,30, "Title.", "Title");
 		viewObjects.add(Title);
+		
 		
 		Author = new TextField(40,100,200,30, "Author.", "Author");
 		viewObjects.add(Author);
@@ -46,15 +47,16 @@ public class CatalogScreen extends FullFunctionScreen {
 		viewObjects.add(Genre);
 		
 		BookNum = new TextField(40,220,200,30, "Book Number.", "BookNum");
+		BookNum.setInputType(TextField.INPUT_TYPE_NUMERIC);
 		viewObjects.add(BookNum);
 		
-		add = new Button(40, 280, 100, 50, "Add", new Action() {
+		add = new Button(40, 280, 200, 30, "Add", new Action() {
 			
 			@Override
 			public void act() {
 				//Title.setText("YOU CLICKED THE BUTTON!");
 				
-				
+				verify();
 				
 			}
 		});
@@ -63,11 +65,10 @@ public class CatalogScreen extends FullFunctionScreen {
 	}
 
 	public void addButtonClicked(){
-		BookCatalog b = new BookCatalog(Title.getText(), Author.getText(), Genre.getText(), Integer.parseInt(BookNum.getText());
-		String s = 
-		TextArea.setText(s);
+		BookCatalog b = new BookCatalog(Title.getText(), Author.getText(), Genre.getText(), Integer.parseInt(BookNum.getText()));
+		String s = textarea.getText() + b;
 		
-		catalog.addNewItem(Title.getText(), Author.getText(), Genre.getText(),  Integer.parseInt(BookNum.getText());
+		catalog.addNewItem(Title.getText(), Author.getText(), Genre.getText(),  Integer.parseInt(BookNum.getText()));
 		
 		//clear the fields
 		Title.setText("");
@@ -76,4 +77,10 @@ public class CatalogScreen extends FullFunctionScreen {
 		BookNum.setText("");
 	}
 	
+	public void verify() {
+		if(Title.getText().equals("") || Author.getText().equals("") || Genre.getText().equals(""))
+		{
+			System.out.println("ERROROROROROROORR");
+		}
+	}
 }

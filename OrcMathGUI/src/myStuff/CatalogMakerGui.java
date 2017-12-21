@@ -2,7 +2,6 @@ package myStuff;
 
 import guiTeacher.GUIApplication;
 
-
 public class CatalogMakerGui extends GUIApplication {
 
 	public CatalogMakerGui(int width, int height) {

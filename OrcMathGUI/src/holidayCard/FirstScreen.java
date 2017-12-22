@@ -35,8 +35,20 @@ public class FirstScreen extends FullFunctionScreen{
 			}
 		});*/
 		
+		switchScreen = new Button(40, 280, 100, 30, "Add", Color.white, new Action() {
+
+			@Override
+			public void act() {
+				
+				GuiPart.part.setScreen(GuiPart.windowTwo);
+
+			}
+		});
+		
 		viewObjects.add(minions);
-		viewObjects.add(add);
+		//viewObjects.add(add);
+		
+		viewObjects.add(switchScreen);
 		
 	}
 	

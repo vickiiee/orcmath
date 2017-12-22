@@ -14,7 +14,7 @@ public class GuiPart extends GUIApplication {
 	}
 
 	public static void main(String[] args) {
-		part = new GuiPart(800, 550);
+		part = new GuiPart(430, 620);
 		 Thread runner = new Thread(part);
 		 runner.start();
 	}

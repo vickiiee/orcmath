@@ -24,7 +24,7 @@ public class FirstScreen extends FullFunctionScreen{
 	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		//Graphic forest = new Graphic(0,0, getWidth(), getHeight(), "resources/download.jpg");
-		Graphic minions = new Graphic(0,0, getWidth(), getHeight(), "resources/giphy.gif");
+		Graphic baymax = new Graphic(0,0, getWidth(), getHeight(), "resources/baymax.jpg");
 		
 		/*add = new Button(40, 280, 100, 30, "Add", Color.white, new Action() {
 
@@ -35,7 +35,7 @@ public class FirstScreen extends FullFunctionScreen{
 			}
 		});*/
 		
-		switchScreen = new Button(40, 280, 100, 30, "Add", Color.white, new Action() {
+		switchScreen = new Button(40, 280, 100, 30, "Page 2", Color.white, new Action() {
 
 			@Override
 			public void act() {
@@ -45,7 +45,7 @@ public class FirstScreen extends FullFunctionScreen{
 			}
 		});
 		
-		viewObjects.add(minions);
+		viewObjects.add(baymax);
 		//viewObjects.add(add);
 		
 		viewObjects.add(switchScreen);

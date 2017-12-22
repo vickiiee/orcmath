@@ -1,16 +1,18 @@
 package holidayCard;
 
+import java.awt.Color;
 import java.util.List;
 
 import guiPlayer.BookCatalog;
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
+import guiTeacher.components.Graphic;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FullFunctionScreen;
 
 public class SecondScreen extends FullFunctionScreen{
 
-	private Button add;
+	private Button back;
 	
 	public SecondScreen(int width, int height) {
 		super(width, height);
@@ -19,18 +21,25 @@ public class SecondScreen extends FullFunctionScreen{
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
-		add = new Button(40, 280, 200, 30, "Add", new Action() {
+		
+		Graphic baymaxtree = new Graphic(0,0, getWidth(), getHeight(), "resources/baymaxtree.gif");
+		
+		back = new Button(350, 580, 70, 30, "Page 1", Color.red, new Action() {
 
 			@Override
 			public void act() {
-				//Title.setText("YOU CLICKED THE BUTTON!");
-
-			
+				
+				GuiPart.part.setScreen(GuiPart.windowOne);
 
 			}
 		});
-
-		viewObjects.add(add);
+		
+		
+		viewObjects.add(baymaxtree);
+		//viewObjects.add(add);
+		
+		viewObjects.add(back);
+		
 	}
 
 	/*public void addButtonClicked(){

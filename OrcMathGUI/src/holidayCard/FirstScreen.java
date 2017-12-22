@@ -35,7 +35,7 @@ public class FirstScreen extends FullFunctionScreen{
 			}
 		});*/
 		
-		switchScreen = new Button(40, 280, 100, 30, "Page 2", Color.white, new Action() {
+		switchScreen = new Button(350, 580, 70, 30, "Page 2", Color.red, new Action() {
 
 			@Override
 			public void act() {

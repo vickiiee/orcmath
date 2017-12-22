@@ -1,6 +1,8 @@
 package holidayCard;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.io.File;
 import java.util.List;
 
 import guiPlayer.BookCatalog;
@@ -34,6 +36,23 @@ public class SecondScreen extends FullFunctionScreen{
 			}
 		});
 		TextArea ta = new TextArea(140, 180, 330 ,400, "HAPPY NEW YEAR!");
+		 try {
+
+			 File fontFile = new File("resources//AdventPro-Medium.ttf");
+
+			 // File fontFile = new File("resources//DayRoman.ttf");
+
+			 Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+
+			 Font baseFont=font.deriveFont(50f);
+
+			 button.setFont(baseFont);
+
+			 } catch (Exception e) {
+
+			 e.printStackTrace();
+
+			 }
 		ta.setTextColor(Color.black);
 	
 		

@@ -12,7 +12,9 @@ import guiTeacher.userInterfaces.FullFunctionScreen;
 
 public class FirstScreen extends FullFunctionScreen{
 
-	private Button add;
+	//private Button add;
+	
+	private Button switchScreen;
 	
 	public FirstScreen(int width, int height) {
 		super(width, height);
@@ -21,17 +23,19 @@ public class FirstScreen extends FullFunctionScreen{
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
-		Graphic forest = new Graphic(0,0, getWidth(), getHeight(), "resources/download.jpg");
+		//Graphic forest = new Graphic(0,0, getWidth(), getHeight(), "resources/download.jpg");
+		Graphic minions = new Graphic(0,0, getWidth(), getHeight(), "resources/giphy.gif");
 		
-		add = new Button(40, 280, 100, 30, "Add", Color.white, new Action() {
+		/*add = new Button(40, 280, 100, 30, "Add", Color.white, new Action() {
 
 			@Override
 			public void act() {
 				//Title.setText("YOU CLICKED THE BUTTON!");
 
 			}
-		});
-		viewObjects.add(forest);
+		});*/
+		
+		viewObjects.add(minions);
 		viewObjects.add(add);
 		
 	}

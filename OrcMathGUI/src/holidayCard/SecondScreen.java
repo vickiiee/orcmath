@@ -8,6 +8,7 @@ import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 import guiTeacher.components.Graphic;
 import guiTeacher.components.StyledComponent;
+import guiTeacher.components.TextArea;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FullFunctionScreen;
 
@@ -32,9 +33,13 @@ public class SecondScreen extends FullFunctionScreen{
 
 			}
 		});
+		TextArea ta = new TextArea(140, 180, 330 ,400, "HAPPY NEW YEAR!");
+		ta.setTextColor(Color.black);
+	
 		
 		viewObjects.add(baymaxtree);
 		viewObjects.add(back);
+		viewObjects.add(ta);
 		
 		 StyledComponent.setButtonOutline(true);
 	}

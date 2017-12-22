@@ -26,7 +26,7 @@ public class GuiPart extends GUIApplication {
 
 	@Override
 	public void initScreen() {
-		StyledComponent.setTextColor(Color.white);
+		//StyledComponent.setTextColor(Color.white);
 		try {
 
 			 File fontFile = new File("resources//christmaseve.ttf");

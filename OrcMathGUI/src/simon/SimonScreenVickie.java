@@ -55,7 +55,7 @@ public class SimonScreenVickie extends ClickableScreen implements Runnable{
 	}
 
 	public void addButtons() {
-		bFace = new ButtonInterfaceVickie[numberOfButtons];
+		setbFace(new ButtonInterfaceVickie[numberOfButtons]);
 		Color[] colors = {Color.RED, Color.orange, Color.yellow, Color.green, Color.cyan};
 		
 		for(int i = 0; i<numberOfButtons; i++) {
@@ -199,6 +199,14 @@ public class SimonScreenVickie extends ClickableScreen implements Runnable{
 			}
 		}
 		b.dim();
+	}
+
+	public ButtonInterfaceVickie[] getbFace() {
+		return bFace;
+	}
+
+	public void setbFace(ButtonInterfaceVickie[] bFace) {
+		this.bFace = bFace;
 	}
 
 

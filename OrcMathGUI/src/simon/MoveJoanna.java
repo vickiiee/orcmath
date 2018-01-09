@@ -8,8 +8,7 @@ public class MoveJoanna implements MoveInterfaceVickie {
 
 	@Override
 	public ButtonInterfaceVickie getButton() {
-		// TODO Auto-generated method stub
-		return null;
+		return button;
 	}
 
 }

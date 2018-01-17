@@ -22,7 +22,9 @@ public class CatalogScreen extends FullFunctionScreen {
 	private CatalogMakerBook catalog;
 	
 	private TextArea textarea;
+	private TextArea cover;
 
+	
 	public CatalogScreen(int width, int height) {
 		super(width, height);
 	}
@@ -32,8 +34,8 @@ public class CatalogScreen extends FullFunctionScreen {
 		
 		catalog = new CatalogMakerBook();
 		
-		textarea = new TextArea(400, 200, 300, 100, "TEXTAREARAERAEFG");
-		viewObjects.add(textarea);
+		/*textarea = new TextArea(400, 200, 300, 100, "TEXTAREARAERAEFG");
+		viewObjects.add(textarea);*/
 		
 		
 		Title = new TextField(40,40,200,30, "Title.", "Title");
@@ -51,12 +53,21 @@ public class CatalogScreen extends FullFunctionScreen {
 		viewObjects.add(BookNum);
 		
 		add = new Button(40, 280, 200, 30, "Add", new Action() {
-			
+			int num = 0;
 			@Override
 			public void act() {
 				//Title.setText("YOU CLICKED THE BUTTON!");
+				num++;
+				String n =Integer.toString(num);
 				
-				verify();
+				/*textarea = new TextArea(400, 200, 300, 100, "TEXTAREARAERAEFG");
+				viewObjects.add(textarea);*/
+				cover = new TextArea(400, 200, 300, 100, " ");
+				viewObjects.add(cover);
+				
+				textarea = new TextArea(400, 200, 300, 100, n);
+				viewObjects.add(textarea);
+				//verify();
 				
 			}
 		});

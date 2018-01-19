@@ -2,9 +2,9 @@ package myStuff;
 
 import java.util.List;
 
-import guiPlayer.BookCatalog;
+import guiPlayer.BookCatalogVickie;
 import guiPlayer.CatalogMaker;
-import guiPlayer.CatalogMakerBook;
+import guiPlayer.CatalogMakerBookVickie;
 import guiTeacher.GUIApplication;
 import guiTeacher.components.*;
 import guiTeacher.interfaces.Visible;
@@ -20,7 +20,7 @@ public class CatalogScreen extends FullFunctionScreen {
 	private Button add;
 	private Button b;
 	
-	private CatalogMakerBook catalog;
+	private CatalogMakerBookVickie catalog;
 	
 	private TextArea textarea;
 	private TextArea cover;
@@ -33,7 +33,7 @@ public class CatalogScreen extends FullFunctionScreen {
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		
-		catalog = new CatalogMakerBook();
+		catalog = new CatalogMakerBookVickie();
 		
 		/*textarea = new TextArea(400, 200, 300, 100, "TEXTAREARAERAEFG");
 		viewObjects.add(textarea);*/
@@ -99,7 +99,7 @@ public class CatalogScreen extends FullFunctionScreen {
 	}
 
 	public void addButtonClicked(){
-		BookCatalog b = new BookCatalog(Title.getText(), Author.getText(), Genre.getText(), Integer.parseInt(BookNum.getText()));
+		BookCatalogVickie b = new BookCatalogVickie(Title.getText(), Author.getText(), Genre.getText(), Integer.parseInt(BookNum.getText()));
 		String s = textarea.getText() + b;
 		
 		catalog.addNewItem(Title.getText(), Author.getText(), Genre.getText(),  Integer.parseInt(BookNum.getText()));

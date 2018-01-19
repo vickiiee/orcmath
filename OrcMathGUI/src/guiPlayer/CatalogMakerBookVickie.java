@@ -10,23 +10,23 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class CatalogMakerBook {
+public class CatalogMakerBookVickie {
 
-	private static ArrayList<BookCatalog> list = new ArrayList<BookCatalog>();
+	private static ArrayList<BookCatalogVickie> list = new ArrayList<BookCatalogVickie>();
 	private static Scanner input;
 	
-	public CatalogMakerBook() {
-		list.add(new BookCatalog("Harry Potter and the Sorceror's Stone", "J.K.Rowling", "Fantasy", 1));
-		list.add(new BookCatalog("Percy Jackson and the Lightning Thief", "Rick Riordan", "Fantasy",1));
-		list.add(new BookCatalog("Cinder", "Marissa Meyer", "Fantasy",1));
-		list.add(new BookCatalog("The Hunger Games", "Suzanne Collins", "Dystopia",1));
-		list.add(new BookCatalog("Legend", "Marie Lu", "Dystopia", 1));
+	public CatalogMakerBookVickie() {
+		list.add(new BookCatalogVickie("Harry Potter and the Sorceror's Stone", "J.K.Rowling", "Fantasy", 1));
+		list.add(new BookCatalogVickie("Percy Jackson and the Lightning Thief", "Rick Riordan", "Fantasy",1));
+		list.add(new BookCatalogVickie("Cinder", "Marissa Meyer", "Fantasy",1));
+		list.add(new BookCatalogVickie("The Hunger Games", "Suzanne Collins", "Dystopia",1));
+		list.add(new BookCatalogVickie("Legend", "Marie Lu", "Dystopia", 1));
 	}
 
 	public String getCsvContent() {
 		String data = "Title, Author, Genre, Book Number \n";
 		
-		for(BookCatalog b: list) {
+		for(BookCatalogVickie b: list) {
 			data += b + " \n";
 		}
 		return data;
@@ -35,7 +35,7 @@ public class CatalogMakerBook {
 	
 
 	public static void main(String[] args) {
-		CatalogMakerBook book = new CatalogMakerBook();
+		CatalogMakerBookVickie book = new CatalogMakerBookVickie();
 
 		input = new Scanner(System.in);
 		//System.out.println("Type in title, author, genre, and the book number of the book in the series. Separate each with a comma.");
@@ -87,7 +87,7 @@ public class CatalogMakerBook {
 		
 		try{    
 			FileWriter fw=new FileWriter("BookCatalog.csv"); 
-			for(BookCatalog b: list){	//depends on instances
+			for(BookCatalogVickie b: list){	//depends on instances
 				fw.write(b+"\n");    	
 			}
 
@@ -131,7 +131,7 @@ public class CatalogMakerBook {
 					
 					String info = "Rainbow Fairies,Rainbow Fairy,Fantasy,1";
 					String [] param = info.split(",");
-					list.add(new BookCatalog(param[0], param[1], param[2], Integer.parseInt(param[3])));
+					list.add(new BookCatalogVickie(param[0], param[1], param[2], Integer.parseInt(param[3])));
 					
 					//fw.write("This file was created programmatically.");    
 					
@@ -159,11 +159,11 @@ public class CatalogMakerBook {
 
 	
 	public void addNewItem(String title, String author, String genre, int bookNum) {
-		list.add(new BookCatalog(title, author, genre, bookNum));
+		list.add(new BookCatalogVickie(title, author, genre, bookNum));
 		System.out.println("Book added successfully!");
 	}
 	
-	public ArrayList<BookCatalog> getCatalog() {
+	public ArrayList<BookCatalogVickie> getCatalog() {
 		return list;
 	}
 

@@ -3,7 +3,7 @@ package holidayCard;
 import java.awt.Color;
 import java.util.List;
 
-import guiPlayer.BookCatalog;
+import guiPlayer.BookCatalogVickie;
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 import guiTeacher.components.Graphic;

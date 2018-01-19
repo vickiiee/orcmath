@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import guiTeacher.components.AnimatedComponent;
 import guiTeacher.components.Component;
 
-public class BookCatalog extends Component {
+public class BookCatalogVickie extends Component {
 
 	private String title;
 	private String author;
@@ -15,7 +15,7 @@ public class BookCatalog extends Component {
 	private int bookNum;
 	
 	
-	public BookCatalog(String title, String author, String genre, int bookNum) {///
+	public BookCatalogVickie(String title, String author, String genre, int bookNum) {///
 		super(40, 40, 400, 633);
 		
 		this.title = title;

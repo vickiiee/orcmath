@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.io.File;
 import java.util.List;
 
-import guiPlayer.BookCatalog;
+import guiPlayer.BookCatalogVickie;
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 import guiTeacher.components.Graphic;
